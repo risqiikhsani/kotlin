@@ -147,6 +147,8 @@ fun MyApp(modifier: Modifier = Modifier) {
         }
     }
 }
+
+// object item
 data class Item(
     val image: Int,
     val title: String,
@@ -154,6 +156,7 @@ data class Item(
     val text: String
 )
 
+// data kucing
 @Composable
 fun generateItems(): List<Item> {
     val item1 = Item(image = R.drawable.cat1, title = "Garfield",age=1, text = "Garfield, Sang Petualang Pemalas: Garfield adalah kucing yang suka bersantai dan makan makanan lezat. Dia adalah teman yang cocok untuk Anda yang suka beristirahat dan menikmati hidup dengan santai.")
@@ -178,6 +181,7 @@ private fun CatCards(
     items: List<Item> = generateItems()
 ) {
     LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
+        // membuat list catcard dengan passing data kucing
         items(items = items) { item ->
             CatCard(item = item)
         }
